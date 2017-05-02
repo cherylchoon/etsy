@@ -1,0 +1,90 @@
+<div class="col-md-12">
+  <a href="/#!/shops/{{currentProduct.product._shop.name}}">Back to Shop</a>
+  <hr>
+
+  <div class="col-md-8 productinfo" style="display: inline-block">
+    <h3>{{currentProduct.product.name}}</h3>
+    <div ng-switch="foundFavorite" style="display: inline-block">
+      <div ng-switch-when="null">
+        <form ng-submit = "createFavorite()">
+          <input class="btn btn-info btn-sm" type="submit" value="Add To Favorite">
+        </form>
+      </div>
+      <div ng-switch-default>
+        <form ng-submit = "deleteFavorite(foundFavorite._id)">
+          <input class="btn btn-danger btn-sm" type="submit" value="Remove from Favorites">
+        </form>
+      </div>
+    </div>
+    <!-- <div class="productphotos" ng-repeat="picture in currentProduct.img">
+      {{picture}}
+    </div> -->
+    <div class="productphotos">
+      <img ng-repeat="image in images" ng-src="/{{image}}" class="img-thumbnail productimg"/>
+    </div>
+    <div ng-if="picture in currentProduct.product.img">
+      <div ng-repeat="picture in currentProduct.product.img">
+        {{picture}}
+      </div>
+    </div>
+    Description: {{currentProduct.product.description}}
+    <p><strong>Price: {{currentProduct.product.price | currency: "USD "}}</strong></p>
+
+
+    <form ng-submit="addCart()">
+      <div class="form-group">
+        <label class="mr-sm-2">Quantity</label>
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" ng-model="item.quantity">
+          <option ng-repeat="quantity in availableQuantity" ng-value="quantity">{{quantity}}</option>
+        </select>
+      </div>
+      <input class="btn btn-info btn-sm" type="submit" value="Add to Cart">
+    </form>
+    <p class="text-danger">{{error}}</p>
+
+    <div class="form-group question">
+      <h4>Have a Question?</h4>
+      <form ng-submit="askQuestion()">
+        <textarea class="form-control" ng-model="question.content"></textarea>
+        <input class="btn btn-info btn-sm" type="submit" value="Ask a Question!">
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-3" style="display:inline-block; vertical-align: top">
+    <div class="review">
+      <h5>All Reviews {{number_of_reviews}}</h5>
+      <div ng-if="productReviews[0] == null">
+        <p>No reviews have been posted yet.</p>
+      </div>
+      <div ng-repeat="review in productReviews">
+        {{review.rating}} stars
+        <p>{{review.content}} - {{review._author.first_name}}</p>
+      </div>
+    </div>
+    <form ng-submit="createReview()">
+      <h5>Leave a Review</h5>
+      <div class="form-group">
+        <label class="mr-sm-2">Rating:</label>
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" ng-model="review.rating">
+          <!-- <option ng-value= null ></option> -->
+          <option ng-value="1">★</option>
+          <option ng-value="2">★★</option>
+          <option ng-value="3">★★★</option>
+          <option ng-value="4">★★★★</option>
+          <option ng-value="5">★★★★★</option>
+        </select>
+      </div>
+      <label class="mr-sm-2">Review:</label>
+      <div class="form-group">
+        <textarea class="form-control" ng-model="review.content"></textarea><br>
+        <input class="btn btn-info btn-sm" type="submit" value="Submit Review">
+      </div>
+      <p class="text-danger">
+        {{reviewErrors}}
+        {{errors._product.message}}
+        <!-- {{errors.content.message}} -->
+      </p>
+    </form>
+  </div>
+</div>

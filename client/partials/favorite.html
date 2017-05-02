@@ -1,0 +1,14 @@
+<h3>Favorites</h3>
+<div ng-repeat="favorite in favorites" class="faves">
+  <div class="shopindex" ng-if="favorite._product.img[0]">
+    <img ng-src="{{favorite._product.img[0]}}">
+  </div>
+  <center>
+    <div class="shopindex" ng-if="!favorite._product.img[0]">
+      <img src="default-product.jpg">
+    </div>
+    <h6><a href="/#!/{{favorite._product._shop.name}}/products/{{favorite._product._id}}">{{favorite._product.name}}</a></h6>
+    <p>Price: {{favorite._product.price | currency:"USD $"}}</p>
+    <a href ng-click="deleteFavorite(favorite._id)">Delete</a>
+  </center>
+</div>

@@ -1,0 +1,34 @@
+<h4>Your Cart</h4>
+<center>
+  <div class="col-md-8" ng-if="cart[0] == null">
+    <h5>There's nothing in your cart!</h5>
+  </div>
+</center>
+<div class="col-md-12" ng-repeat="product in cart">
+  <div ng-if="product._product.img[0]" class="col-md-1 cartimg" style="display:inline-block; vertical-align:top">
+    <a href="/#!/{{ product._product._shop.name }}/products/{{product._product._id}}"><img ng-src="{{product._product.img[0]}}"></a>
+  </div>
+  <div ng-if="!product._product.img[0]" class="col-md-1 cartimg" style="display:inline-block; vertical-align:top">
+    <a href="/#!/{{ product._product._shop.name }}/products/{{product._product._id}}"><img src="default-shop.jpg"></a>
+  </div>
+  <div class="col-md-4" style="display:inline-block; vertical-align:top">
+    <h5><a href="/#!/{{ product._product._shop.name }}/products/{{product._product._id}}">{{product._product.name}}</a></h5>
+    <h6>$ {{product._product.price}}</h6>
+  </div>
+  <div class="col-md-2" style="display:inline-block; vertical-align:top">
+    <div class="form-group">
+      <form ng-submit="updateCart(product)">
+        <input class="form-control col-sm-6" type="number" ng-model="product.quantity">
+        <input class="btn btn-info btn-sm" type="submit" name="" value="Update">
+      </form>
+    </div>
+  </div>
+  <div class="col-md-3" style="display:inline-block; vertical-align:top">
+    <a href ng-click="deleteCart(product)">Delete From Cart</a>
+  </div>
+  <hr>
+</div>
+<div class="col-md-12" ng-if="cart[0] != null">
+  <h5>Total: {{cartTotal | currency: "$"}}</h5>
+  <button class="btn btn-info float-right" ng-click="openModal()">Checkout</button>
+</div>

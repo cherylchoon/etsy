@@ -1,0 +1,21 @@
+<div class="col-md-12">
+  <div class="col-md-6 shopmaker" style="display:inline-block; vertical-align:top">
+    <h4>Create a new shop</h4>
+    <img src="hangingplants.jpg">
+    <form ng-submit="create()">
+      <div class="form-group">
+        <label for="name">Shop Name:</label>
+        <input class="form-control" type="text" ng-model="shop.name" placeholder="Shop Name">
+      </div>
+      <div class="form-group">
+        <label for="name">Shop Description:</label>
+        <textarea class="form-control" ng-model="shop.description" placeholder="Shop Description"></textarea>
+      </div>
+      <input class="btn btn-info" type="submit" value="Start Selling!">
+    </form>
+  </div>
+  <div class="col-md-4" style="display:inline-block">
+    <p class="text-danger" ng-repeat="error in errors">{{error.message}}</p>
+    <p class="text-danger" ng-if="duplicate_error">{{duplicate_error}}</p>
+  </div>
+</div>

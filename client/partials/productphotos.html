@@ -1,0 +1,10 @@
+Product Name: {{productinfo.product.name}}
+Product Description: {{productinfo.product.description}}
+
+<form ng-submit="addProdPhotos()">
+    <div class="form-group">
+        <label>Product Images</label>
+        <input class="btn btn-outline-info btn-sm" type="button" ngf-select ng-model="files" name="files" ngf-multiple="true" accept="'image/*'" value="Upload File"> {{files}}
+        <input class="btn btn-info" type="submit" value="Start Selling!">
+    </div>
+</form>

@@ -1,0 +1,74 @@
+<div class="col-md-12 home">
+  <h3>Check out these stores:</h3>
+  <hr>
+  <div ng-repeat="shop in shops | filter: global.search | limitTo: 14" class="shopunit">
+    <center>
+      <div ng-if="shop.shoppic" class="shopindex">
+        <a href="/#!/shops/{{shop.name}}"><img ng-src="{{shop.shoppic}}"></a>
+      </div>
+      <div ng-if="!shop.shoppic" class="shopindex">
+        <a href="/#!/shops/{{shop.name}}"><img src="default-shop.jpg"></a>
+      </div>
+      <p><a href="/#!/shops/{{shop.name}}">{{shop.name | limitTo: 15}}</a></p>
+    </center>
+  </div>
+  <hr>
+  <div class="col-md-12 bigbranding">
+    <div class="branding">
+      <img src="shopsy1.png">
+      <div class="brandingtext">
+        <h5>Get something you love</h5>
+        <p>Our marketplace is a world of vintage and handmade goods</p>
+      </div>
+    </div>
+    <div class="branding">
+      <img src="shopsy2.png">
+      <div class="brandingtext">
+        <h5>Find your new favorite shop</h5>
+        <p>More than a million independent sellers from everywhere are right here</p>
+      </div>
+    </div>
+    <div class="branding">
+      <img src="shopsy3.png">
+      <div class="brandingtext">
+        <h5>Buy safely and securely</h5>
+        <p>Shopsy protects every transaction, so shop with confidence</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 itemshome">
+    <h3>New Items</h3>
+    <hr>
+    <div ng-repeat="product in products | limitTo: 14 | orderBy: '-createdAt'" class="itemunit">
+      <div class="itemimg" ng-if="product.img[0]">
+        <a href="/#!/{{product._shop.name}}/products/{{product._id}}"><img ng-src="{{product.img[0]}}"/></a>
+      </div>
+      <div class="itemimg" ng-if="!product.img[0]">
+        <a href="/#!/{{product._shop.name}}/products/{{product._id}}"><img src="default-product.jpg"/></a>
+      </div>
+      <p><a href="/#!/{{product._shop.name}}/products/{{product._id}}">{{product.name | limitTo: 20}}</a><p>
+    </div>
+    <hr>
+  </div>
+  <div class="fullwidth">
+    <div class="joinshopsy lefty">
+      <img src="startshop1.png">
+    </div>
+    <div class="joinshopsy middly">
+      <h3>Start selling on Shopsy</h3>
+      <p>Dozens of shoppers can't wait to see what you have in store.<p>
+      <a href="/#!/create_shop">Open a shop today</a>
+    </div>
+    <div class="joinshopsy">
+      <img src="startshop2.png">
+    </div>
+  </div>
+  <div class="recentreviews">
+    <h3>Recent Reviews</h3>
+    <hr>
+    <div ng-repeat="review in reviews | limitTo: 12 | orderBy:'-createdAt' " class="reviewlist">
+
+      <img ng-src="{{review._product.img[0]}}"> <a href="/#!/{{review._product._shop.name}}/products/{{review._product._id}}">{{review._product.name}}</a> - {{review.rating}} stars, {{review._author.first_name}}
+    </div>
+  </div>
+</div>

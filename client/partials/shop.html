@@ -1,0 +1,41 @@
+<div class="col-md-12">
+  <div class="col-md-8 productlist">
+     <div ng-if="shop.shoppic" class="shophero">
+        <img ng-src="{{shop.shoppic}}"/>
+      </div>
+      <div ng-if="shop.shoppic" class="shopname">
+        <h4>{{ shop.name }}</h4>
+        <span class="shopdesc">{{ shop.description }}</span>
+      </div>
+      <div ng-if="!shop.shoppic">
+        <h4>{{ shop.name }}</h4>
+        <span class="shopdesc">{{ shop.description }}</span>
+      </div>
+  </div>
+  <div class="col-md-3 shopowner">
+    <center>
+      <div ng-if="shop._shop_owner.profilepic" class="avatar"><img class="rounded mx-auto d-block" ng-src="{{ shop._shop_owner.profilepic }}"/></div>
+      <div ng-if="!shop._shop_owner.profilepic" class="avatar"><img src="default-user.png"/></div>
+    </center>
+      <p class="text-center">{{ shop._shop_owner.first_name }} {{ shop._shop_owner.last_name }}</p>
+      <div ng-if="shop._shop_owner._id != user_id">
+      <a href="/#!/sendmessage/{{ shop._shop_owner._id }}">Send {{ shop._shop_owner.first_name }} a message</a>
+    </div>
+    <div ng-if="shop._shop_owner._id == user_id" class="myshop">
+      <h5>Welcome to your shop, {{ shop._shop_owner.first_name}}</h5>
+      <a href="/#!/addshopimage/{{shop._id}}">Add Shop Image</a></br>
+      <a href="/#!/{{shop.name}}/create_listing">Create New Listing</a>
+      <div ng-if="!shop._shop_owner.profilepic"><a href="/#!/settings">Add a Profile Photo</a></div>
+    </div>
+  </div>
+</div>
+</br>
+<div class="col-md-2 shop-item" ng-repeat="product in products">
+  <center>
+    <div class="shopimg" ng-if="product.img[0]"><a href="/#!/{{ shop.name }}/products/{{ product._id }}"><img class="img-thumbnail" ng-src="{{product.img[0]}}"/></a></div>
+    <div class="shopimg" ng-if="!product.img[0]"><a href="/#!/{{ shop.name }}/products/{{ product._id }}"><img class="img-thumbnail" src="default-product.jpg"/></a></div>
+    <h5 class="text-left"><a href="/#!/{{ shop.name }}/products/{{ product._id }}">{{product.name}}</a></h5>
+    <p class="text-left">{{product.price | currency:"USD$"}}</p>
+  </center>
+  </br>
+</div>

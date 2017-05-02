@@ -1,0 +1,24 @@
+<div class="col-md-12">
+  <h4>Search Results</h4>
+  <h4>Shops</h4>
+  <div ng-repeat="shop in shopResults" class="resultsblock">
+     <div class="resultsimgs">
+        <a href="/#!/shops/{{shop.name}}"><img ng-src="{{shop.shoppic}}"/></a>
+     </div>
+     <div class="resultstxt">
+        <a href="/#!/shops/{{shop.name}}">{{shop.name | limitTo: 20}}</a>
+     </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <h4>Products</h4>
+  <div ng-repeat="product in productResults" class="resultsblock">
+    <div class="resultsimgs">
+      <a href="/#!/{{product._shop.name}}/products/{{product._id}}"><img ng-src="{{product.img[0]}}"></a>
+    </div>
+    <div class="resultstxt">
+      <a href="/#!/{{product._shop.name}}/products/{{product._id}}">{{product.name | limitTo: 15}}</a>
+      <p>${{product.price}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,346 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white !important;
+}
+
+#wrapper{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.container{
+  background-color: white;
+}
+
+.login{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.register{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.avatar img{
+  width: 125px;
+	height: 125px;
+	-webkit-border-radius: 30px; /* Saf3+, Chrome */
+	border-radius: 100%; /* Opera 10.5, IE 9 */
+	/*-moz-border-radius: 30px;  Disabled for FF1+ */
+  margin: 10px 10px 10px 0;
+}
+
+.navbar-brand img{
+  height: 25px;
+}
+
+.productlist{
+  vertical-align: top;
+  display: inline-block;
+}
+
+.shopowner{
+  display: inline-block;
+  vertical-align: top;
+}
+
+label {
+  display:block;
+}
+
+button{
+  margin-top: 20px;
+}
+
+.sendmessage{
+  width: 400px;
+  display: inline-block;
+  vertical-align: top;
+}
+.sendmessage textarea{
+  display: block;
+  margin-bottom: 20px;
+}
+.messagehistory{
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 5em;
+}
+.messagehistory h3{
+  display: inline-block;
+  vertical-align: middle;
+}
+.messagehistory .avatar{
+  display: inline-block;
+  vertical-align: middle;
+}
+.productimg{
+  width: 200px;
+  margin-bottom: 1em;
+  margin-right: .5em;
+}
+.myshop{
+  border: 1px solid grey;
+  border-radius: .5em;
+  padding: .5em;
+}
+
+.shophero{
+  position: absolute;
+  clip: rect(0px, 700px, 250px, 0px);
+}
+
+.shophero img{
+  height: auto;
+  width: 100%;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.shopname{
+  position: relative;
+  display: block;
+  margin-top: 270px;
+}
+.shopindex{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2em;
+  margin-right: 1em;
+}
+
+.shopindex img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.shopindex img.portrait {
+  width: 100%;
+  height: auto;
+}
+.searchinfo{
+  display: inline-block;
+  vertical-align: middle;
+}
+.shop-item{
+  height: 300px;
+  display: inline-block;
+  vertical-align: top;
+}
+.home{
+  margin-bottom: 2em;
+}
+
+.shopunit{
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.shopunit h3{
+  vertical-align: middle;
+  display: inline-block;
+}
+.cartimg img{
+  width: 75px;
+  height: 75px;
+}
+.profileuploader{
+  display: inline-block;
+  vertical-align: top;
+}
+.userupdater{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.button__badge {
+  background-color: #fa3e3e;
+  border-radius: 2px;
+  color: white;
+
+  padding: 2px 3px;
+  font-size: 10px;
+
+  top: 0;
+  right: 0;
+}
+.ng-invalid {
+    color: red;
+}
+.resultsimgs{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2em;
+  margin-right: 1em;
+}
+.resultsimgs img{
+ position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.resultstxt{
+  margin-bottom: 1em;
+}
+
+.resultsblock{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.shopimg img{
+  width: 150px;
+}
+
+.productinfo h3{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: .5em;
+}
+.question textarea{
+  margin-bottom: .5em;
+}
+.faves{
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 1em;
+}
+.bigbranding{
+  text-align: center;
+}
+.brandingtext{
+  display: inline-block;
+  vertical-align: top;
+  width: 150px;
+}
+.branding {
+  display: inline-block;
+  vertical-align: middle;
+  width: 325px;
+  margin: .5em auto;
+}
+
+.branding img{
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.branding p{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: .8em;
+}
+.branding h5{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: .9em;
+}
+.shopunit h5{
+  margin-top: .25em;
+}
+
+.itemimg{
+ position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2em;
+  margin-right: 1em;
+}
+
+.itemimg img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.itemunit{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.fullwidth{
+  height: 235px;
+  background-color: #FF9A15;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.joinshopsy{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 auto;
+  width: 350px;
+}
+.joinshopsy img{
+  width: 320px;
+}
+.lefty{
+  margin-top: -20px;
+}
+
+.middly{
+  margin-top: 40px;
+  color: white;
+}
+.middly a{
+  color: white;
+  text-decoration: none;
+}
+.middly a:hover{
+  color: white;
+  text-decoration: underline;
+}
+.middly a:visited{
+  color: white;
+  text-decoration: none;
+}
+.shopmaker img{
+  margin: .5em auto;
+}
+
+.makeitem{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 1em;
+}
+
+.makeitem img{
+  width: 325px;
+}
+.righty{
+  text-align: center;
+}
+
+.recentreviews{
+  height: 300px;
+}
+.reviewlist img{
+  width: 80px;
+}

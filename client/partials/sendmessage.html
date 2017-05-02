@@ -1,0 +1,25 @@
+<div class="form-group sendmessage col-md-4">
+    <h3>Send Message</h3>
+    <form ng-submit="sendMessage()">
+        <textarea name="message" class="form-control" id="message" cols="30" rows="10" ng-model="newMessage.content"></textarea>
+        <button type="submit" class="btn btn-info">Send</button>
+    </form>
+</div>
+
+<div ng-if="myMessages" class="messagehistory col-md-6">
+    <div ng-if="myMessages[0]._recipient._id != myid">
+        <div ng-if="myMessages[0]._recipient.profilepic" class="avatar"><img ng-src="{{ myMessages[0]._recipient.profilepic }}"></div><div ng-if="!myMessages[0]._recipient.profilepic" class="avatar"><img src="default-user.png"></div><h3>{{myMessages[0]._recipient.first_name}}'s Conversation</h3>
+    </div>
+    <div ng-if="myMessages[0]._sender._id != myid">
+        <div ng-if="myMessages[0]._sender.profilepic" class="avatar"><img ng-src="{{ myMessages[0]._sender.profilepic }}"></div><div ng-if="!myMessages[0]._sender.profilepic" class="avatar"><img src="default-user.png"></div><h3>{{myMessages[0]._sender.first_name}}'s Conversation</h3>
+    </div>
+    <div ng-repeat="message in myMessages | orderBy: '-createdAt' " class="messagestosender">
+        <div ng-if="!message.sendername">
+            {{message.content}} from {{ message._sender.first_name }} {{ message._sender.last_name }} at {{message.createdAt | date:'medium'}} 
+        </div>
+        <div ng-if="message.sendername">
+            {{message.content}} from {{ message.sendername}} at {{message.createdAt | date:'medium'}} 
+        </div>
+        <hr>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- jQuery, from CDN. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Boostrap, from CDN. -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <!--Angular-->
+    <script src="angular/angular.js"></script>
+    <script src="angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+    <script src="/angular-messages/angular-messages.js"></script>
+    <script src="/angular-cookies/angular-cookies.js"></script>
+    <script src="/angular-payments/lib/angular-payments.js"></script>
+    <script src="/ng-file-upload/ng-file-upload.js"></script>
+    <script src="/angular-modal-service/dst/angular-modal-service.min.js"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script src="/angular-animate/angular-animate.js"></script>
+    <script src="assets/app.js"></script>
+
+
+    <!--Controllers-->
+    <script src="assets/controllers/homeController.js"></script>
+    <script src="assets/controllers/loginController.js"></script>
+    <script src="assets/controllers/settingsController.js"></script>
+    <script src="assets/controllers/shopController.js"></script>
+    <script src="assets/controllers/productController.js"></script>
+    <script src="assets/controllers/searchController.js"></script>
+    <script src="assets/controllers/cartController.js"></script>
+    <script src="assets/controllers/favoriteController.js"></script>
+    <script src="assets/controllers/messageController.js"></script>
+    <script src="assets/controllers/navbarController.js"></script>
+    <script src="assets/controllers/conversationController.js"></script>
+
+    <!--Factories-->
+    <script src="assets/factories/userFactory.js"></script>
+    <script src="assets/factories/shopFactory.js"></script>
+    <script src="assets/factories/productFactory.js"></script>
+    <script src="assets/factories/messageFactory.js"></script>
+    <script src="assets/factories/searchFactory.js"></script>
+    <script src="assets/factories/orderFactory.js"></script>
+
+    <!-- <script>
+    $(document).ready(function(){
+        $(".modal-body").click(function(){
+            console.log("ITS WORKING")
+        });
+    });
+    </script> -->
+  <title>Shopsy</title>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded" ng-controller="navbarController">
+      <a class="navbar-brand" href="/#!/"><img src="shopsy-logo.png"></a>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" ng-model="searchParams" placeholder="Search">
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit" ng-click="search()">Search</button>
+      </form>
+      <ul class="navbar-nav mr-auto">
+      </ul>
+        <a class="nav-link" href="/#!/inbox">Inbox <span ng-if="unread.count > 0" class="button__badge ">{{unread.count}}</span></a>
+        <a class="nav-link" href="/#!/create_shop">Sell on Shopsy</a>
+        <a class="nav-link" href="/#!/favorites">Favorites</a>
+        <a class="nav-link" href="/#!/cart">Your Cart</a>
+        <a class="nav-link" href="/#!/settings">Settings</a>
+        <a class="nav-link" href="/#!/" ng-click="logout()">Logout</a>
+    </nav>
+    </br>
+    <div ng-view=""></div>
+  </div>
+</body>
+</html>
